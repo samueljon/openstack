@@ -22,19 +22,19 @@ fi
 }
 
 #interfaces #disable this if the script detects more than one interface  and enable the below line
-vlan=192.168.0
+vlan=192.168.11
 
 now=`date +%Y%m%d%H%M`
 device=eth0
-start=$vlan.150
-end=$vlan.200
-gw=$vlan.1
-dns1=4.2.2.2
-dns2=
+start=$vlan.49
+end=$vlan.99
+gw=$vlan.254
+dns1=$vlan.253
+dns2=$vlan.254
 dns3=
 hwaddr=`cat /etc/udev/rules.d/70-persistent-net.rules | grep $device | cut -d, -f4 | sed 's/ ATTR{address}=="//g' | sed 's/"//g'`
 IP=`ifconfig $device|grep -w inet|awk '{print $2}'|cut -d: -f2`
-domain=marafa.vm
+domain=villingaholt.nu
 PublicNet=PublicNet
 PublicSubNet=PublicSubNet
 
